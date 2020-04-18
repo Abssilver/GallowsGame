@@ -29,20 +29,13 @@ namespace GallowsGame
         byte numberOfMistakes = 0;
         Random rand = new Random();
         
-        string[] questionArray = new string[] {"Функция или процедура",
-                                               "while, do, for", 
-                                               "if-else", 
-                                               "(s, e)=>{...}"};
+        string[] questionArray;
         
-        string[] answerArray = new string[] { "метод",
-                                              "цикл",
-                                              "ветвление",
-                                              "лямбда"};
+        string[] answerArray;
         public MainPage()
         {
             this.InitializeComponent();
             GenerateAlphabetField();
-            GenerateQuestion();
         }
 
         void GenerateQuestion()
@@ -111,6 +104,20 @@ namespace GallowsGame
             BitmapImage gallowsImg = new BitmapImage();
             gallowsImg.UriSource = new Uri(gallowsImage.BaseUri, $"Gallows_{numOfMistakes}.png");
             gallowsImage.Source = gallowsImg;
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            Database transmittedDb = (e.Parameter as Database);
+            questionArray = transmittedDb.questionCollection;
+            answerArray = transmittedDb.answerCollection;
+            GenerateQuestion();
+        }
+
+        private void backButton_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+                Frame.GoBack();
         }
     }
 }
