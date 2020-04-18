@@ -31,7 +31,7 @@
                    HorizontalAlignment="Center" 
                    Text="Text" TextWrapping="Wrap" 
                    VerticalAlignment="Center" 
-                   Height="43" Width="338"/>
+                   Height="90" Width="450"/>
         <TextBlock x:Name="answerText" FontSize="30" 
                    Grid.Column="1" 
                    HorizontalAlignment="Center" 
@@ -43,6 +43,7 @@
                 HorizontalAlignment="Center"
                 Width="350" Height="350" 
                 Grid.Column="1" Grid.Row="3"/>
+        <Button x:Name="backButton" Style="{StaticResource NavigationBackButtonNormalStyle}" VerticalAlignment="Top" Width="121" Tapped="backButton_Tapped" />
 
     </Grid>
 </Page>
