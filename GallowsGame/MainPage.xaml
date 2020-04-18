@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="GallowsGame.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GallowsGame"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Margin="4,0,-4,0">
+        <Grid.Background>
+            <ImageBrush ImageSource="/woodBackground.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="125*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition/>
+            <RowDefinition Height="430*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="gallowsImage" 
+               HorizontalAlignment="Center" 
+               Width="356" Height="523" 
+               VerticalAlignment="Center" Grid.RowSpan="4"/>
+        <TextBlock x:Name="questionText" FontSize="30" 
+                   Grid.Column="1" 
+                   HorizontalAlignment="Center" 
+                   Text="Text" TextWrapping="Wrap" 
+                   VerticalAlignment="Center" 
+                   Height="43" Width="338"/>
+        <TextBlock x:Name="answerText" FontSize="30" 
+                   Grid.Column="1" 
+                   HorizontalAlignment="Center" 
+                   Text="Text" TextWrapping="Wrap" 
+                   VerticalAlignment="Center" 
+                   Height="43" Width="338" Grid.Row="1"/>
+        <Canvas x:Name="alphabetCanvas" 
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Width="350" Height="350" 
+                Grid.Column="1" Grid.Row="3"/>
+
+    </Grid>
+</Page>
